@@ -14,7 +14,7 @@ public class MySQLConexion {
 		
 		try {
 			Class.forName("com.mysql.jdbc.Driver");
-			String url = "jdbc:mysql://localhost/x1";
+			String url = "jdbc:mysql://localhost/x2";
 			String usr = "root";
 			String psw = "mysql";
 			
@@ -23,7 +23,7 @@ public class MySQLConexion {
 		} catch (ClassNotFoundException e) {
 			System.out.println("Error >> Driver no Instalado!!");
 		} catch (SQLException e) {
-			System.out.println("Error >> de conexiÛn con la BD");
+			System.out.println("Error >> de conexi√≥n con la BD");
 		}
 		
 		return con;
