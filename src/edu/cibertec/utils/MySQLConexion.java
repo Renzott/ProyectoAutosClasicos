@@ -14,7 +14,7 @@ public class MySQLConexion {
 		
 		try {
 			Class.forName("com.mysql.jdbc.Driver");
-			String url = "jdbc:mysql://localhost/x4";
+			String url = "jdbc:mysql://localhost/x1";
 			String usr = "root";
 			String psw = "mysql";
 			
