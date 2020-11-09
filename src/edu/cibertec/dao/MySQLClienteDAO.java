@@ -24,7 +24,7 @@ public class MySQLClienteDAO implements ClienteDAO {
 			
 			con = MySQLConexion.getConexion();
 			
-			String sql = "INSERT INTO tb_jugador VALUES(null,?)";
+			String sql = "CALL SPAL_RegistrarCliente(?,?,?,?,?,?,?,?)";
 			
 			pst = con.prepareStatement(sql);
 			
@@ -72,21 +72,19 @@ public class MySQLClienteDAO implements ClienteDAO {
 			
 			con = MySQLConexion.getConexion();
 			
-			String sql = "";
+			String sql = "SPAL_ActualizarCliente";
 			
 			pst = con.prepareStatement(sql);
-			
-			
-			pst.setString(1, clie.getNroDocumentoCliente());
-			pst.setString(2, clie.getNombresCliente());
-			pst.setString(3, clie.getApellidosCliente());
-			pst.setString(4, clie.getFechaNacimientoCliente());
-			pst.setString(5, clie.getCorreoCliente());
-			pst.setString(6, clie.getContrasenaCliente());
-			pst.setInt(7, clie.getTelefonoCliente());
-			pst.setString(8, clie.getCodigoAuto());
-			
-			pst.setInt(9, clie.getCodigoCliente());
+
+			pst.setInt(1, clie.getCodigoCliente());
+			pst.setString(2, clie.getNroDocumentoCliente());
+			pst.setString(3, clie.getNombresCliente());
+			pst.setString(4, clie.getApellidosCliente());
+			pst.setString(5, clie.getFechaNacimientoCliente());
+			pst.setString(6, clie.getCorreoCliente());
+			pst.setString(7, clie.getContrasenaCliente());
+			pst.setInt(8, clie.getTelefonoCliente());
+			pst.setString(9, clie.getCodigoAuto());
 
 
 			rs = pst.executeUpdate();
@@ -122,7 +120,7 @@ public class MySQLClienteDAO implements ClienteDAO {
 			
 			con = MySQLConexion.getConexion();
 			
-			String sql = "";
+			String sql = "SPAL_EliminarCliente";
 			
 			pst = con.prepareStatement(sql);
 			
@@ -165,7 +163,7 @@ public class MySQLClienteDAO implements ClienteDAO {
 					
 			con = MySQLConexion.getConexion();
 					
-			String sql= "";
+			String sql= "SPAL_ListarCliente";
 					
 			pst = con.prepareStatement(sql);
 				
@@ -222,7 +220,7 @@ public class MySQLClienteDAO implements ClienteDAO {
 					
 			con = MySQLConexion.getConexion();
 					
-			String sql= "";
+			String sql= "SPAL_ListarClientexCodigo";
 					
 			pst = con.prepareStatement(sql);
 			pst.setString(1, CodAuto);

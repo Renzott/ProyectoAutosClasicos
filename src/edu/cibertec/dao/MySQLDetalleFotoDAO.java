@@ -76,7 +76,7 @@ public class MySQLDetalleFotoDAO implements DetalleFotoDAO {
 					
 			con = MySQLConexion.getConexion();
 					
-			String sql= "";
+			String sql= "SPAL_Listar_DetallexFoto";
 					
 			pst = con.prepareStatement(sql);
 			

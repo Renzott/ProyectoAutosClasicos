@@ -11,4 +11,7 @@ public interface CombustibleDAO {
 	
 	public ArrayList<CombustibleDTO> ListadoCombustible();
 
+	/*----------------------Alvaro------------------------*/
+
+	public CombustibleDTO ListadoCombustiblexCodigo(String codigo);
 }

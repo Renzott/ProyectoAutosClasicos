@@ -11,5 +11,7 @@ public interface KilometrajeDAO {
 	
 	public ArrayList<KilometrajeDTO> ListadoKilometraje();
 	
+	/*----------------------Alvaro------------------------*/
 
+	public KilometrajeDTO ListadoKilometrajexCodigo(String codigo);
 }

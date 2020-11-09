@@ -19,6 +19,11 @@ public class TipoAutoService {
 		
 		return dao.ListadoTipoAuto();
 	}
-	
 
+	/*----------------------Alvaro------------------------*/
+
+	public TipoAutoDTO ListadoTipoAutoxCodigo(String codigo){
+		
+		return dao.ListadoTipoAutoxCodigo(codigo);
+	}
 }

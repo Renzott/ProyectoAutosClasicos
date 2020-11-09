@@ -4,7 +4,6 @@ import java.io.Serializable;
 
 public class ClienteDTO implements Serializable{
 	
-	
 	private int CodigoCliente;
 	private String NroDocumentoCliente;
 	private String NombresCliente;
@@ -15,11 +14,10 @@ public class ClienteDTO implements Serializable{
 	private int TelefonoCliente;
 	private String CodigoAuto;
 	
+	public ClienteDTO() {
+		
+	}
 	
-	
-	public ClienteDTO() {}
-	
-
 	public ClienteDTO(int codigoCliente, String nroDocumentoCliente, String nombresCliente, String apellidosCliente,
 			String fechaNacimientoCliente, String correoCliente, String contrasenaCliente, int telefonoCliente,
 			String codigoAuto) {
@@ -35,16 +33,12 @@ public class ClienteDTO implements Serializable{
 		CodigoAuto = codigoAuto;
 	}
 	
-	
-	
-	
 	public int getCodigoCliente() {
 		return CodigoCliente;
 	}
 	public void setCodigoCliente(int codigoCliente) {
 		CodigoCliente = codigoCliente;
 	}
-	
 	
 	public String getNroDocumentoCliente() {
 		return NroDocumentoCliente;
@@ -53,14 +47,12 @@ public class ClienteDTO implements Serializable{
 		NroDocumentoCliente = nroDocumentoCliente;
 	}
 	
-	
 	public String getNombresCliente() {
 		return NombresCliente;
 	}
 	public void setNombresCliente(String nombresCliente) {
 		NombresCliente = nombresCliente;
 	}
-	
 	
 	public String getApellidosCliente() {
 		return ApellidosCliente;
@@ -69,14 +61,12 @@ public class ClienteDTO implements Serializable{
 		ApellidosCliente = apellidosCliente;
 	}
 	
-	
 	public String getFechaNacimientoCliente() {
 		return FechaNacimientoCliente;
 	}
 	public void setFechaNacimientoCliente(String fechaNacimientoCliente) {
 		FechaNacimientoCliente = fechaNacimientoCliente;
 	}
-	
 	
 	public String getCorreoCliente() {
 		return CorreoCliente;
@@ -85,14 +75,12 @@ public class ClienteDTO implements Serializable{
 		CorreoCliente = correoCliente;
 	}
 	
-	
 	public String getContrasenaCliente() {
 		return ContrasenaCliente;
 	}
 	public void setContrasenaCliente(String contrasenaCliente) {
 		ContrasenaCliente = contrasenaCliente;
 	}
-	
 	
 	public int getTelefonoCliente() {
 		return TelefonoCliente;
@@ -101,18 +89,10 @@ public class ClienteDTO implements Serializable{
 		TelefonoCliente = telefonoCliente;
 	}
 	
-	
 	public String getCodigoAuto() {
 		return CodigoAuto;
 	}
 	public void setCodigoAuto(String codigoAuto) {
 		CodigoAuto = codigoAuto;
 	}
-	
-	
-	
-	
-	
-	
-
 }

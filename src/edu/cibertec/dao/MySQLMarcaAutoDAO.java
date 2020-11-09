@@ -25,7 +25,7 @@ public class MySQLMarcaAutoDAO implements MarcaAutoDAO {
 					
 			con = MySQLConexion.getConexion();
 					
-			String sql= "";
+			String sql= "CALL SPAL_Listar_MarcaAuto";
 					
 			pst = con.prepareStatement(sql);
 				
@@ -58,4 +58,56 @@ public class MySQLMarcaAutoDAO implements MarcaAutoDAO {
 		return lista;
 	}
 
+<<<<<<< HEAD
+=======
+	/*----------------------Alvaro------------------------*/
+	
+	@Override
+	public MarcaAutoDTO ListadoMarcaAutoxCodigo(String codigo) {
+		MarcaAutoDTO marcaAuto = null;
+		
+		ResultSet rs = null;
+		Connection con = null;
+		PreparedStatement pst = null;
+				
+		try{
+					
+			con = MySQLConexion.getConexion();
+					
+			String sql= "CALL SPAL_Listar_MarcaAutoxCodigo(?)";
+					
+			pst = con.prepareStatement(sql);
+
+			pst.setString(1, codigo);
+				
+			rs = pst.executeQuery();
+					
+					
+			while(rs.next()){
+				
+				MarcaAutoDTO ma = new MarcaAutoDTO();
+				
+				ma.setCodigoMarcaAuto(rs.getString(1));
+				ma.setNombreMarcaAuto(rs.getString(2));
+						
+				marcaAuto = ma;
+			}
+					
+		}catch(Exception e){
+					
+					System.out.println("ERROR EN LA SENTENCIA - LISTADO " + e.getMessage());		
+		}finally{
+			
+			try{
+				con.close();
+				pst.close();
+			}catch(Exception e){
+					System.out.println("ERROR AL CERRAR - LISTADO");
+			}
+		}
+		
+		return marcaAuto;
+	}
+
+>>>>>>> origin/alvaro
 }

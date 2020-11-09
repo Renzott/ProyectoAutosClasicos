@@ -1,6 +1,7 @@
 package edu.cibertec.beans;
 
 import java.io.Serializable;
+import java.util.List;
 
 public class AutoDTO implements Serializable{
 	
@@ -55,10 +56,6 @@ public class AutoDTO implements Serializable{
 		CodigoCombustible = codigoCombustible;
 		CodigoKilometraje = codigoKilometraje;
 	}
-
-
-
-
 
 	public String getCodigoAuto() {
 		return CodigoAuto;
@@ -202,16 +199,80 @@ public class AutoDTO implements Serializable{
 	public void setCodigoKilometraje(String codigoKilometraje) {
 		CodigoKilometraje = codigoKilometraje;
 	}
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
 
+	/*----------------------Alvaro------------------------*/
+	
+	private TipoAutoDTO tipoAuto;
+	private MarcaAutoDTO marcaAuto;
+	private CarroceriaDTO carroceria;
+	private TipoTransmisionDTO TipoTransmision;
+	private CombustibleDTO Combustible;
+	private KilometrajeDTO Kilometraje;
+
+	public AutoDTO(String codigoAuto, String modelooAuto, String descripcionAuto, String anoAuto, String pesoAuto,
+			String placaAuto, String colorAuto, int puertasAuto, String cilindradaAuto, double precioAuto,
+			Boolean estadoAuto, String fotoAuto, TipoAutoDTO tipoAuto, MarcaAutoDTO marcaAuto, CarroceriaDTO carroceria,
+			TipoTransmisionDTO tipoTransmision, CombustibleDTO combustible, KilometrajeDTO kilometraje) {
+		super();
+		CodigoAuto = codigoAuto;
+		ModelooAuto = modelooAuto;
+		DescripcionAuto = descripcionAuto;
+		AnoAuto = anoAuto;
+		PesoAuto = pesoAuto;
+		PlacaAuto = placaAuto;
+		ColorAuto = colorAuto;
+		PuertasAuto = puertasAuto;
+		CilindradaAuto = cilindradaAuto;
+		PrecioAuto = precioAuto;
+		EstadoAuto = estadoAuto;
+		FotoAuto = fotoAuto;
+		this.tipoAuto = tipoAuto;
+		this.marcaAuto = marcaAuto;
+		this.carroceria = carroceria;
+		TipoTransmision = tipoTransmision;
+		Combustible = combustible;
+		Kilometraje = kilometraje;
+	}
+	
+	public TipoAutoDTO getTipoAuto() {
+		return tipoAuto;
+	}
+	public void setTipoAuto(TipoAutoDTO tipoAuto) {
+		this.tipoAuto = tipoAuto;
+	}
+
+	public MarcaAutoDTO getMarcaAuto() {
+		return marcaAuto;
+	}
+	public void setMarcaAuto(MarcaAutoDTO marcaAuto) {
+		this.marcaAuto = marcaAuto;
+	}
+
+	public CarroceriaDTO getCarroceria() {
+		return carroceria;
+	}
+	public void setCarroceria(CarroceriaDTO carroceria) {
+		this.carroceria = carroceria;
+	}
+
+	public TipoTransmisionDTO getTipoTransmision() {
+		return TipoTransmision;
+	}
+	public void setTipoTransmision(TipoTransmisionDTO tipoTransmision) {
+		TipoTransmision = tipoTransmision;
+	}
+
+	public CombustibleDTO getCombustible() {
+		return Combustible;
+	}
+	public void setCombustible(CombustibleDTO combustible) {
+		Combustible = combustible;
+	}
+
+	public KilometrajeDTO getKilometraje() {
+		return Kilometraje;
+	}
+	public void setKilometraje(KilometrajeDTO kilometraje) {
+		Kilometraje = kilometraje;
+	}
 }

@@ -19,7 +19,11 @@ public class TipoTransmisionService {
 		
 		return dao.ListadoTipoTransmision();
 	}
-	
-	
 
+	/*----------------------Alvaro------------------------*/
+	
+	public TipoTransmisionDTO ListadoTipoTransmisionxCodigo(String codigo){
+		
+		return dao.ListadoTipoTransmisionxCodigo(codigo);
+	}
 }

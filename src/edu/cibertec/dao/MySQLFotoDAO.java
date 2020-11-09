@@ -25,7 +25,7 @@ public class MySQLFotoDAO implements FotoDAO {
 					
 			con = MySQLConexion.getConexion();
 					
-			String sql= "";
+			String sql= "SPAL_Listar_Foto";
 					
 			pst = con.prepareStatement(sql);
 				
