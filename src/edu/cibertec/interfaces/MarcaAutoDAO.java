@@ -11,4 +11,7 @@ public interface MarcaAutoDAO {
 	
 	public ArrayList<MarcaAutoDTO> ListadoMarcaAuto();
 
+	/*----------------------Alvaro------------------------*/
+
+	public MarcaAutoDTO ListadoMarcaAutoxCodigo(String codigo);
 }

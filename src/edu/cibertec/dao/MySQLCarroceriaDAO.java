@@ -24,7 +24,7 @@ public class MySQLCarroceriaDAO implements CarroceriaDAO {
 					
 			con = MySQLConexion.getConexion();
 					
-			String sql= "SPAL_Listar_Carroceria";
+			String sql= "CALL SPAL_Listar_Carroceria";
 					
 			pst = con.prepareStatement(sql);
 				
@@ -56,6 +56,56 @@ public class MySQLCarroceriaDAO implements CarroceriaDAO {
 		
 
 		return lista;
+	}
+
+	/*----------------------Alvaro------------------------*/
+	
+	@Override
+	public CarroceriaDTO ListadoCarroceriaxCodigo(String codigo) {
+		CarroceriaDTO carroceria = null;
+		
+		ResultSet rs = null;
+		Connection con = null;
+		PreparedStatement pst = null;
+				
+		try{
+					
+			con = MySQLConexion.getConexion();
+					
+			String sql= "CALL SPAL_Listar_CarroceriaxCodigo(?)";
+					
+			pst = con.prepareStatement(sql);
+
+			pst.setString(1, codigo);
+				
+			rs = pst.executeQuery();
+					
+					
+			while(rs.next()){
+				
+				CarroceriaDTO c = new CarroceriaDTO();
+				
+				c.setCodigoCarroceria(rs.getString(1));
+				c.setNombreCarroceria(rs.getString(2));
+				
+				carroceria = c;
+			}
+					
+		}catch(Exception e){
+					
+					System.out.println("ERROR EN LA SENTENCIA - LISTADO " + e.getMessage());		
+		}finally{
+			
+			try{
+				con.close();
+				pst.close();
+			}catch(Exception e){
+					System.out.println("ERROR AL CERRAR - LISTADO");
+			}
+		}
+		
+
+		return carroceria;
 	}
 
 }

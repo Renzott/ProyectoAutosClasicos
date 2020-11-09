@@ -9,4 +9,8 @@ public interface TipoAutoDAO {
 	
 	public ArrayList<TipoAutoDTO> ListadoTipoAuto();
 
+	/*----------------------Alvaro------------------------*/
+
+	public TipoAutoDTO ListadoTipoAutoxCodigo(String codigo);
+
 }

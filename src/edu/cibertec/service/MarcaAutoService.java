@@ -19,11 +19,11 @@ public class MarcaAutoService {
 		
 		return dao.ListadoMarcaAuto();
 	}
-	
-	
-	
-	
-	
-	
 
+	/*----------------------Alvaro------------------------*/
+	
+	public MarcaAutoDTO ListadoMarcaAutoxCodigo(String codigo){
+		
+		return dao.ListadoMarcaAutoxCodigo(codigo);
+	}
 }

@@ -11,4 +11,7 @@ public interface TipoTransmisionDAO {
 	
 	public ArrayList<TipoTransmisionDTO> ListadoTipoTransmision();
 
+	/*----------------------Alvaro------------------------*/
+
+	public TipoTransmisionDTO ListadoTipoTransmisionxCodigo(String codigo);
 }

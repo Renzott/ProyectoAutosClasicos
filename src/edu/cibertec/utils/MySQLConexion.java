@@ -16,7 +16,7 @@ public class MySQLConexion {
 			Class.forName("com.mysql.jdbc.Driver");
 			String url = "jdbc:mysql://localhost/autosbd";
 			String usr = "root";
-			String psw = "axelromani94";
+			String psw = "mysql";
 			
 			con = DriverManager.getConnection(url, usr, psw);
 			

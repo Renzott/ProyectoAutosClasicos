@@ -11,4 +11,7 @@ public interface CarroceriaDAO {
 	
 	public ArrayList<CarroceriaDTO> ListadoCarroceria();
 
+	/*----------------------Alvaro------------------------*/
+
+	public CarroceriaDTO ListadoCarroceriaxCodigo(String codigo);
 }

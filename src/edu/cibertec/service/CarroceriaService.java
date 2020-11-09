@@ -18,7 +18,13 @@ public class CarroceriaService {
 		
 		return dao.ListadoCarroceria();
 	}
+
+	/*----------------------Alvaro------------------------*/
 	
+	public CarroceriaDTO ListadoCarroceriaxCodigo(String codigo){
+		
+		return dao.ListadoCarroceriaxCodigo(codigo);
+	}
 	
 
 }

@@ -9,8 +9,8 @@ public interface AutoDAO {
 	
 	
 	public ArrayList<AutoDTO> ListadoAuto();
-	
-	
+
+	public AutoDTO ListadoAutoPorCodigo(String codigo);
 	
 	public ArrayList<AutoDTO> ListadoAutoPorCodigoTipoAuto(String CodTipoAuto);
 	
