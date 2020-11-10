@@ -19,7 +19,6 @@ public class TipoAutoService {
 		
 		return dao.ListadoTipoAuto();
 	}
-<<<<<<< HEAD
 
 	/*----------------------Alvaro------------------------*/
 
@@ -27,8 +26,4 @@ public class TipoAutoService {
 		
 		return dao.ListadoTipoAutoxCodigo(codigo);
 	}
-=======
-	
-
->>>>>>> origin/mauro
 }

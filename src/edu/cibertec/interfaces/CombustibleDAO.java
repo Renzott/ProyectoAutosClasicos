@@ -11,10 +11,7 @@ public interface CombustibleDAO {
 	
 	public ArrayList<CombustibleDTO> ListadoCombustible();
 
-<<<<<<< HEAD
 	/*----------------------Alvaro------------------------*/
 
 	public CombustibleDTO ListadoCombustiblexCodigo(String codigo);
-=======
->>>>>>> origin/mauro
 }

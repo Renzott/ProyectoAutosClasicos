@@ -19,13 +19,10 @@ public class CombustibleService {
 		return dao.ListadoCombustible();
 	}
 
-<<<<<<< HEAD
 	/*----------------------Alvaro------------------------*/
 
 	public CombustibleDTO ListadoCombustiblexCodigo(String codigo){
 		
 		return dao.ListadoCombustiblexCodigo(codigo);
 	}
-=======
->>>>>>> origin/mauro
 }

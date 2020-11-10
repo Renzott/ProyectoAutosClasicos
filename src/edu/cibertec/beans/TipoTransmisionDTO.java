@@ -1,7 +1,6 @@
 package edu.cibertec.beans;
 
 import java.io.Serializable;
-<<<<<<< HEAD
 import java.util.List;
 
 public class TipoTransmisionDTO implements Serializable{
@@ -11,31 +10,12 @@ public class TipoTransmisionDTO implements Serializable{
 	
 	public TipoTransmisionDTO() {}
 
-=======
-
-public class TipoTransmisionDTO implements Serializable{
-	
-	
-	private String CodigoTipoTransmision;
-	private String NombreTipoTransmision;
-	
-	
-	public TipoTransmisionDTO() {}
-
-
->>>>>>> origin/mauro
 	public TipoTransmisionDTO(String codigoTipoTransmision, String nombreTipoTransmision) {
 		super();
 		CodigoTipoTransmision = codigoTipoTransmision;
 		NombreTipoTransmision = nombreTipoTransmision;
 	}
 
-<<<<<<< HEAD
-=======
-
-
-
->>>>>>> origin/mauro
 	public String getCodigoTipoTransmision() {
 		return CodigoTipoTransmision;
 	}
@@ -43,25 +23,10 @@ public class TipoTransmisionDTO implements Serializable{
 		CodigoTipoTransmision = codigoTipoTransmision;
 	}
 
-<<<<<<< HEAD
-=======
-
->>>>>>> origin/mauro
 	public String getNombreTipoTransmision() {
 		return NombreTipoTransmision;
 	}
 	public void setNombreTipoTransmision(String nombreTipoTransmision) {
 		NombreTipoTransmision = nombreTipoTransmision;
 	}
-<<<<<<< HEAD
-=======
-	
-	
-	
-	
-	
-	
-	
-
->>>>>>> origin/mauro
 }
