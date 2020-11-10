@@ -57,8 +57,6 @@ public class MySQLTipoTransmisionDAO implements TipoTransmisionDAO {
 		return lista;
 	}
 
-<<<<<<< HEAD
-=======
 	/*----------------------Alvaro------------------------*/
 	
 	@Override
@@ -108,5 +106,4 @@ public class MySQLTipoTransmisionDAO implements TipoTransmisionDAO {
 		return tipoTransmision;
 	}
 
->>>>>>> origin/alvaro
 }

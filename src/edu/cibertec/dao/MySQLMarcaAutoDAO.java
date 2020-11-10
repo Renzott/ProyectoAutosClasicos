@@ -58,8 +58,6 @@ public class MySQLMarcaAutoDAO implements MarcaAutoDAO {
 		return lista;
 	}
 
-<<<<<<< HEAD
-=======
 	/*----------------------Alvaro------------------------*/
 	
 	@Override
@@ -109,5 +107,4 @@ public class MySQLMarcaAutoDAO implements MarcaAutoDAO {
 		return marcaAuto;
 	}
 
->>>>>>> origin/alvaro
 }

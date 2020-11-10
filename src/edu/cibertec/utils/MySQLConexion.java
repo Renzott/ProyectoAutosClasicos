@@ -14,7 +14,7 @@ public class MySQLConexion {
 		
 		try {
 			Class.forName("com.mysql.jdbc.Driver");
-			String url = "jdbc:mysql://localhost/autosbd";
+			String url = "jdbc:mysql://localhost/autosbd?characterEncoding=latin1&useConfigs=maxPerformance";
 			String usr = "root";
 			String psw = "mysql";
 			

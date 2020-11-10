@@ -2,3 +2,5 @@
 .settings
 out
 build
+.classpath
+classes

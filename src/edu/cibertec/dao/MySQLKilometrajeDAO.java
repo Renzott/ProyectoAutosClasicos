@@ -58,8 +58,6 @@ public class MySQLKilometrajeDAO implements KilometrajeDAO {
 		return lista;
 	}
 
-<<<<<<< HEAD
-=======
 	/*----------------------Alvaro------------------------*/
 	
 	@Override
@@ -110,5 +108,4 @@ public class MySQLKilometrajeDAO implements KilometrajeDAO {
 		return kilometraje;
 	}
 
->>>>>>> origin/alvaro
 }

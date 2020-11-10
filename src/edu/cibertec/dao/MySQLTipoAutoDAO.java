@@ -59,8 +59,6 @@ public class MySQLTipoAutoDAO implements TipoAutoDAO {
 		return lista;
 	}
 
-<<<<<<< HEAD
-=======
 	/*----------------------Alvaro------------------------*/
 	
 	@Override
@@ -110,5 +108,4 @@ public class MySQLTipoAutoDAO implements TipoAutoDAO {
 		return tipoAuto;
 	}
 
->>>>>>> origin/alvaro
 }
