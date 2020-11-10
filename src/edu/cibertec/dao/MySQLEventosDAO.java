@@ -24,7 +24,7 @@ public class MySQLEventosDAO implements EventosDAO {
 			
 			con = MySQLConexion.getConexion();
 			
-			String sql = "INSERT INTO tb_jugador VALUES(?,?)";
+			String sql = "CALL {SPAL_RegistrarEventos (?,?,?,?,?)}";
 			
 			pst = con.prepareStatement(sql);
 			
@@ -67,7 +67,7 @@ public class MySQLEventosDAO implements EventosDAO {
 			
 			con = MySQLConexion.getConexion();
 			
-			String sql = "";
+			String sql = "CALL {SPAL_ActualizarEventos (?,?,?,?,?)}";
 			
 			pst = con.prepareStatement(sql);
 			
@@ -110,7 +110,7 @@ public class MySQLEventosDAO implements EventosDAO {
 			
 			con = MySQLConexion.getConexion();
 			
-			String sql = "";
+			String sql = "CALL {SPAL_EliminarEventos (?)}";
 			
 			pst = con.prepareStatement(sql);
 			
@@ -151,7 +151,7 @@ public class MySQLEventosDAO implements EventosDAO {
 					
 			con = MySQLConexion.getConexion();
 					
-			String sql= "";
+			String sql= "CALL {SPAL_Listar_Evento}";
 					
 			pst = con.prepareStatement(sql);
 				
@@ -203,7 +203,7 @@ public class MySQLEventosDAO implements EventosDAO {
 					
 			con = MySQLConexion.getConexion();
 					
-			String sql= "";
+			String sql= "CALL {SPAL_Listar_EventoxCodigo(?)}";
 					
 			pst = con.prepareStatement(sql);
 			

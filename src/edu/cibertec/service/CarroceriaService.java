@@ -18,6 +18,7 @@ public class CarroceriaService {
 		
 		return dao.ListadoCarroceria();
 	}
+<<<<<<< HEAD
 
 	/*----------------------Alvaro------------------------*/
 	
@@ -25,6 +26,9 @@ public class CarroceriaService {
 		
 		return dao.ListadoCarroceriaxCodigo(codigo);
 	}
+=======
+	
+>>>>>>> origin/mauro
 	
 
 }

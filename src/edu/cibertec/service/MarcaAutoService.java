@@ -19,6 +19,7 @@ public class MarcaAutoService {
 		
 		return dao.ListadoMarcaAuto();
 	}
+<<<<<<< HEAD
 
 	/*----------------------Alvaro------------------------*/
 	
@@ -26,4 +27,13 @@ public class MarcaAutoService {
 		
 		return dao.ListadoMarcaAutoxCodigo(codigo);
 	}
+=======
+	
+	
+	
+	
+	
+	
+
+>>>>>>> origin/mauro
 }

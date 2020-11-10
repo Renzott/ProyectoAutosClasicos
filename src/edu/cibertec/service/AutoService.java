@@ -20,11 +20,14 @@ public class AutoService {
 		
 		return dao.ListadoAuto();
 	}
+<<<<<<< HEAD
 
 	public AutoDTO ListadoAutoPorCodigo(String codigo){
 		
 		return dao.ListadoAutoPorCodigo(codigo);
 	}
+=======
+>>>>>>> origin/mauro
 	
 	
 	public ArrayList<AutoDTO> ListadoAutoPorCodigoTipoAuto(String CodTipoAuto){

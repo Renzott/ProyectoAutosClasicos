@@ -109,16 +109,5 @@ public class CotizarAutoDTO implements Serializable{
 	public void setCodigoAuto(String codigoAuto) {
 		CodigoAuto = codigoAuto;
 	}
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
 
 }

@@ -19,6 +19,7 @@ public class TipoTransmisionService {
 		
 		return dao.ListadoTipoTransmision();
 	}
+<<<<<<< HEAD
 
 	/*----------------------Alvaro------------------------*/
 	
@@ -26,4 +27,9 @@ public class TipoTransmisionService {
 		
 		return dao.ListadoTipoTransmisionxCodigo(codigo);
 	}
+=======
+	
+	
+
+>>>>>>> origin/mauro
 }

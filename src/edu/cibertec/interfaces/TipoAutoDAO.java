@@ -9,8 +9,11 @@ public interface TipoAutoDAO {
 	
 	public ArrayList<TipoAutoDTO> ListadoTipoAuto();
 
+<<<<<<< HEAD
 	/*----------------------Alvaro------------------------*/
 
 	public TipoAutoDTO ListadoTipoAutoxCodigo(String codigo);
 
+=======
+>>>>>>> origin/mauro
 }

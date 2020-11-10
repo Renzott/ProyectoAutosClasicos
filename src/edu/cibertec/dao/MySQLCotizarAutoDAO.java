@@ -23,7 +23,7 @@ public class MySQLCotizarAutoDAO implements CotizarAutoDAO {
 			
 			con = MySQLConexion.getConexion();
 			
-			String sql = "INSERT INTO tb_jugador VALUES(null,?)";
+			String sql = "CALL SPAL_RegistrarCotizarAuto(null,?,?,?,?,?,?,?,?)";
 			
 			pst = con.prepareStatement(sql);
 			
@@ -69,7 +69,7 @@ public class MySQLCotizarAutoDAO implements CotizarAutoDAO {
 			
 			con = MySQLConexion.getConexion();
 			
-			String sql = "";
+			String sql = "CALL SPAL_ActualizarCotizarAuto(?,?,?,?,?,?,?,?,?)";
 			
 			pst = con.prepareStatement(sql);
 			
@@ -117,7 +117,7 @@ public class MySQLCotizarAutoDAO implements CotizarAutoDAO {
 			
 			con = MySQLConexion.getConexion();
 			
-			String sql = "";
+			String sql = "CALL {SPAL_EliminarCotizarAuto(?)} ";
 			
 			pst = con.prepareStatement(sql);
 			
@@ -134,7 +134,7 @@ public class MySQLCotizarAutoDAO implements CotizarAutoDAO {
 				con.close();
 				pst.close();
 			}catch(Exception e){
-				System.out.println("ERROR AL CERRAR - REGISTRAR");
+				System.out.println("ERROR AL CERRAR - ELIMINAR");
 			}
 		}
 		
@@ -156,7 +156,7 @@ public class MySQLCotizarAutoDAO implements CotizarAutoDAO {
 					
 			con = MySQLConexion.getConexion();
 					
-			String sql= "";
+			String sql= "CALL SPAL_Listar_CotizarAuto";
 					
 			pst = con.prepareStatement(sql);
 				
@@ -211,7 +211,7 @@ public class MySQLCotizarAutoDAO implements CotizarAutoDAO {
 					
 			con = MySQLConexion.getConexion();
 					
-			String sql= "";
+			String sql= " CALL SPAL_Listar_CotizarAutoxMarca(?)";
 					
 			pst = con.prepareStatement(sql);
 			
@@ -269,7 +269,7 @@ public class MySQLCotizarAutoDAO implements CotizarAutoDAO {
 					
 			con = MySQLConexion.getConexion();
 					
-			String sql= "";
+			String sql= " CALL SPAL_Listar_CotizarAutoxCodigoAuto (?)";
 					
 			pst = con.prepareStatement(sql);
 			

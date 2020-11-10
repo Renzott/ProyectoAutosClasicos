@@ -11,7 +11,11 @@ public interface KilometrajeDAO {
 	
 	public ArrayList<KilometrajeDTO> ListadoKilometraje();
 	
+<<<<<<< HEAD
 	/*----------------------Alvaro------------------------*/
 
 	public KilometrajeDTO ListadoKilometrajexCodigo(String codigo);
+=======
+
+>>>>>>> origin/mauro
 }

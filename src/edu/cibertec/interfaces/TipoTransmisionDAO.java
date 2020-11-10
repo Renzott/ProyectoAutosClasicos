@@ -11,7 +11,10 @@ public interface TipoTransmisionDAO {
 	
 	public ArrayList<TipoTransmisionDTO> ListadoTipoTransmision();
 
+<<<<<<< HEAD
 	/*----------------------Alvaro------------------------*/
 
 	public TipoTransmisionDTO ListadoTipoTransmisionxCodigo(String codigo);
+=======
+>>>>>>> origin/mauro
 }

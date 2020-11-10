@@ -25,7 +25,11 @@ public class MySQLTipoAutoDAO implements TipoAutoDAO {
 					
 			con = MySQLConexion.getConexion();
 					
+<<<<<<< HEAD
 			String sql= "CALL SPAL_Listar_TipoAuto";
+=======
+			String sql= "";
+>>>>>>> origin/mauro
 					
 			pst = con.prepareStatement(sql);
 				
@@ -59,6 +63,7 @@ public class MySQLTipoAutoDAO implements TipoAutoDAO {
 		return lista;
 	}
 
+<<<<<<< HEAD
 	/*----------------------Alvaro------------------------*/
 	
 	@Override
@@ -108,4 +113,6 @@ public class MySQLTipoAutoDAO implements TipoAutoDAO {
 		return tipoAuto;
 	}
 
+=======
+>>>>>>> origin/mauro
 }

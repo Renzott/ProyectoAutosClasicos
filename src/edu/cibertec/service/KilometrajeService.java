@@ -19,10 +19,13 @@ public class KilometrajeService {
 		return dao.ListadoKilometraje();
 	}
 
+<<<<<<< HEAD
 	/*----------------------Alvaro------------------------*/
 
 	public KilometrajeDTO ListadoKilometrajexCodigo(String codigo){
 		
 		return dao.ListadoKilometrajexCodigo(codigo);
 	}
+=======
+>>>>>>> origin/mauro
 }
