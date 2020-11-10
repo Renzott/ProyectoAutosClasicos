@@ -6,48 +6,17 @@ import java.util.List;
 
 public class RespuestaListadoDTO implements Serializable {
 	
-	private List<CotizarAutoDTO> lstCotizaAuto;
-	private List<EventosDTO> lstEventos;
-	private List<UsuarioEventoDTO> lstUsuarioEvento;
-	
-	public RespuestaListadoDTO() {
-		
-	}
-	
+	private Object response;
 
-	public RespuestaListadoDTO(List<CotizarAutoDTO> lstCotizaAuto, List<EventosDTO> lstEventos,
-			List<UsuarioEventoDTO> lstUsuarioEvento) {
-		super();
-		this.lstCotizaAuto = lstCotizaAuto;
-		this.lstEventos = lstEventos;
-		this.lstUsuarioEvento = lstUsuarioEvento;
+	public RespuestaListadoDTO(Object response) {
+		this.response = response;
 	}
 
-
-	public List<EventosDTO> getLstEventos() {
-		return lstEventos;
+	public Object getResponse() {
+		return response;
 	}
 
-	public void setLstEventos(List<EventosDTO> lstEventos) {
-		this.lstEventos = lstEventos;
+	public void setResponse(Object response) {
+		this.response = response;
 	}
-
-	public List<UsuarioEventoDTO> getLstUsuarioEvento() {
-		return lstUsuarioEvento;
-	}
-
-	public void setLstUsuarioEvento(List<UsuarioEventoDTO> lstUsuarioEvento) {
-		this.lstUsuarioEvento = lstUsuarioEvento;
-	}
-
-
-public List<CotizarAutoDTO> getLstCotizaAuto() {
-	return lstCotizaAuto;
-}
-
-public void setLstCotizaAuto(List<CotizarAutoDTO> lstCotizaAuto) {
-	this.lstCotizaAuto = lstCotizaAuto;
-}
-
-
 }

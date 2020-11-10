@@ -14,16 +14,16 @@ public class MySQLConexion {
 		
 		try {
 			Class.forName("com.mysql.jdbc.Driver");
-			String url = "jdbc:mysql://localhost/autosbd?characterEncoding=latin1&useConfigs=maxPerformance";
-			String usr = "root";
-			String psw = "mysql";
+			String url = "jdbc:mysql://den1.mysql1.gear.host/autosbd?characterEncoding=latin1&useConfigs=maxPerformance";
+			String usr = "autosbd";
+			String psw = "Pe8t-i1d-346";
 			
 			con = DriverManager.getConnection(url, usr, psw);
 			
 		} catch (ClassNotFoundException e) {
 			System.out.println("Error >> Driver no Instalado!!");
 		} catch (SQLException e) {
-			System.out.println("Error >> de conexi�n con la BD");
+			System.out.println("Error >> de conexion con la BD");
 		}
 		
 		return con;

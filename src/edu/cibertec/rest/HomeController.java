@@ -10,13 +10,13 @@ import javax.ws.rs.core.MediaType;
 
 
 @Path("/")
-public class HelloController {
+public class HomeController {
 
     @GET
     @Produces(MediaType.TEXT_PLAIN)
     public String getHello(){
 
-        return "hello!";
+        return "API Working!";
 
     }
 

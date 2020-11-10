@@ -18,7 +18,6 @@ public class AutoDTO implements Serializable{
 	private Boolean EstadoAuto;
 	private String FotoAuto;
 
-
 	private String CodigoTipoAuto;
 	private String CodigoMarcaAuto;
 	private String CodigoCarroceria;
@@ -27,9 +26,7 @@ public class AutoDTO implements Serializable{
 	private String CodigoKilometraje;
 
 
-
 	public AutoDTO() {}
-
 
 
 	public AutoDTO(String codigoAuto, String modelooAuto, String descripcionAuto, String anoAuto, String pesoAuto,
@@ -64,14 +61,12 @@ public class AutoDTO implements Serializable{
 		CodigoAuto = codigoAuto;
 	}
 
-
 	public String getModelooAuto() {
 		return ModelooAuto;
 	}
 	public void setModelooAuto(String modelooAuto) {
 		ModelooAuto = modelooAuto;
 	}
-
 
 	public String getDescripcionAuto() {
 		return DescripcionAuto;
@@ -80,14 +75,12 @@ public class AutoDTO implements Serializable{
 		DescripcionAuto = descripcionAuto;
 	}
 
-
 	public String getAnoAuto() {
 		return AnoAuto;
 	}
 	public void setAnoAuto(String anoAuto) {
 		AnoAuto = anoAuto;
 	}
-
 
 	public String getPesoAuto() {
 		return PesoAuto;
@@ -96,14 +89,12 @@ public class AutoDTO implements Serializable{
 		PesoAuto = pesoAuto;
 	}
 
-
 	public String getPlacaAuto() {
 		return PlacaAuto;
 	}
 	public void setPlacaAuto(String placaAuto) {
 		PlacaAuto = placaAuto;
 	}
-
 
 	public String getColorAuto() {
 		return ColorAuto;
@@ -112,14 +103,12 @@ public class AutoDTO implements Serializable{
 		ColorAuto = colorAuto;
 	}
 
-
 	public int getPuertasAuto() {
 		return PuertasAuto;
 	}
 	public void setPuertasAuto(int puertasAuto) {
 		PuertasAuto = puertasAuto;
 	}
-
 
 	public String getCilindradaAuto() {
 		return CilindradaAuto;
@@ -128,14 +117,12 @@ public class AutoDTO implements Serializable{
 		CilindradaAuto = cilindradaAuto;
 	}
 
-
 	public double getPrecioAuto() {
 		return PrecioAuto;
 	}
 	public void setPrecioAuto(double precioAuto) {
 		PrecioAuto = precioAuto;
 	}
-
 
 	public Boolean getEstadoAuto() {
 		return EstadoAuto;
@@ -144,14 +131,12 @@ public class AutoDTO implements Serializable{
 		EstadoAuto = estadoAuto;
 	}
 
-
 	public String getFotoAuto() {
 		return FotoAuto;
 	}
 	public void setFotoAuto(String fotoAuto) {
 		FotoAuto = fotoAuto;
 	}
-
 
 	public String getCodigoTipoAuto() {
 		return CodigoTipoAuto;
@@ -160,14 +145,12 @@ public class AutoDTO implements Serializable{
 		CodigoTipoAuto = codigoTipoAuto;
 	}
 
-
 	public String getCodigoMarcaAuto() {
 		return CodigoMarcaAuto;
 	}
 	public void setCodigoMarcaAuto(String codigoMarcaAuto) {
 		CodigoMarcaAuto = codigoMarcaAuto;
 	}
-
 
 	public String getCodigoCarroceria() {
 		return CodigoCarroceria;
@@ -176,14 +159,12 @@ public class AutoDTO implements Serializable{
 		CodigoCarroceria = codigoCarroceria;
 	}
 
-
 	public String getCodigoTipoTransmision() {
 		return CodigoTipoTransmision;
 	}
 	public void setCodigoTipoTransmision(String codigoTipoTransmision) {
 		CodigoTipoTransmision = codigoTipoTransmision;
 	}
-
 
 	public String getCodigoCombustible() {
 		return CodigoCombustible;

@@ -2,8 +2,6 @@ package edu.cibertec.rest.get;
 
 import java.util.ArrayList;
 
-
-
 import javax.ws.rs.GET;
 import javax.ws.rs.Path;
 import javax.ws.rs.PathParam;
@@ -38,7 +36,7 @@ public class ServiciosEventosGet {
 		 }else {
 			 
 			 System.out.println("Te envio todo el listado de Eventos!");
-			 respuesta = new RespuestaListadoDTO(null, lista, null); //EventosDTO(lista);
+			 respuesta = new RespuestaListadoDTO(lista); //EventosDTO(lista);
 		 }
 			System.out.println("fin: ListarEventosX()");
 		
@@ -74,7 +72,7 @@ public class ServiciosEventosGet {
 		 }else {
 			 
 			 System.out.println("Te envio todo el listado x Pais!");
-			 respuesta = new RespuestaListadoDTO(null, lista, null); //EventosDTO(lista);
+			 respuesta = new RespuestaListadoDTO( lista); //EventosDTO(lista);
 		 }
 		
 		

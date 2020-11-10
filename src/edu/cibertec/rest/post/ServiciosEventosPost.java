@@ -1,7 +1,9 @@
 package edu.cibertec.rest.post;
 
-import javax.ws.rs.*;
-
+import javax.ws.rs.Consumes;
+import javax.ws.rs.POST;
+import javax.ws.rs.Path;
+import javax.ws.rs.Produces;
 import javax.ws.rs.core.MediaType;
 
 import edu.cibertec.beans.EventosDTO;
@@ -11,8 +13,6 @@ import edu.cibertec.service.EventosService;
 @Path("/tipopost")
 public class ServiciosEventosPost {
 
-
-
 	@POST
 	@Path("/regEvent")
 	@Consumes(MediaType.APPLICATION_JSON)
@@ -20,11 +20,6 @@ public class ServiciosEventosPost {
 	public ResultadoDTO RegistrarEventos(EventosDTO eve) {
 		
 		System.out.println("Inic: RegistrarEventos()");
-		System.out.println("CodigoEventos: " + eve.getTituloEventos());
-		System.out.println("TituloEventos: " + eve.getTituloEventos());
-		System.out.println("FechaEventos: " + eve.getFechaEventos());
-		System.out.println("FotoEventos: " + eve.getFotoEventos());
-		System.out.println("CodigoAuto: " + eve.getCodigoAuto());
 
 		ResultadoDTO resultado = null;
 		
@@ -60,12 +55,6 @@ public class ServiciosEventosPost {
 	public ResultadoDTO ActualizaEventos(EventosDTO eve) {
 		
 		System.out.println("Inic: ActualizaEventos()");
-		System.out.println("TituloEventos: " + eve.getTituloEventos());
-		System.out.println("FechaEventos: " + eve.getFechaEventos());
-		System.out.println("FotoEventos: " + eve.getFotoEventos());
-		System.out.println("CodigoAuto: " + eve.getCodigoAuto());
-		
-		
 		
 		ResultadoDTO resultado = null;
 		
@@ -98,8 +87,6 @@ public class ServiciosEventosPost {
 	public ResultadoDTO EliminarEventos(EventosDTO eve) {
 		
 		System.out.println("Inic: EliminarEventos()");
-		System.out.println("CodigoEventos: " + eve.getTituloEventos());
-		
 		
 		ResultadoDTO resultado = null;
 		

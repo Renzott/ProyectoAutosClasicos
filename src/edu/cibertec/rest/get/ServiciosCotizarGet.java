@@ -37,7 +37,7 @@ public class ServiciosCotizarGet {
 		 }else {
 			 
 			 System.out.println("Te envio todo el listado de Cotizacion de Autos!");
-			 respuesta = new RespuestaListadoDTO(lista, null, null);
+			 respuesta = new RespuestaListadoDTO(lista);
 		 }
 		
 		System.out.println("fin: ListarCotizarAutos()");
@@ -71,7 +71,7 @@ public class ServiciosCotizarGet {
 		 }else {
 			 
 			 System.out.println("Te envio todo el listado de Cotizacion de Autos x Marca Autos!");
-			 respuesta = new RespuestaListadoDTO(lista, null, null);
+			 respuesta = new RespuestaListadoDTO(lista);
 		 }
 			System.out.println("fin: ListarCotizarAutosPorCodigoMarcaAuto()");
 		
@@ -104,7 +104,7 @@ public class ServiciosCotizarGet {
 		 }else {
 			 
 			 System.out.println("Te envio todo el listado de Cotizacion de Autos x Codigo Autos!");
-			 respuesta = new RespuestaListadoDTO(lista, null, null);
+			 respuesta = new RespuestaListadoDTO(lista);
 		 }
 		
 		System.out.println("fin: ListarCotizarAutosPorCodigoAuto()");

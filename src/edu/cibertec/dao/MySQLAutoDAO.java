@@ -26,6 +26,7 @@ public class MySQLAutoDAO implements AutoDAO {
 	@Override
 	public ArrayList<AutoDTO> ListadoAuto() {
 		ArrayList<AutoDTO> lista = new ArrayList<AutoDTO>();
+		
 		ResultSet rs = null;
 		Connection con = null;
 		PreparedStatement pst = null;
@@ -249,8 +250,8 @@ public class MySQLAutoDAO implements AutoDAO {
 		return lista;
 		
 	}
-	/* ------------------------------------------------ ------------------ */
-	
+
+	/* ------------------------------------------------------------------ */
 
 	@Override
 	public ArrayList<AutoDTO> ListadoAutoPorCodigoMarcaAuto(String CodMarcaAuto) {
