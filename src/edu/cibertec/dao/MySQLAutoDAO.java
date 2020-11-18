@@ -3,6 +3,7 @@ package edu.cibertec.dao;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
+import java.sql.SQLException;
 import java.util.ArrayList;
 
 import edu.cibertec.beans.AutoDTO;
@@ -35,59 +36,17 @@ public class MySQLAutoDAO implements AutoDAO {
 					
 			con = MySQLConexion.getConexion();
 					
-			String sql= "CALL SPAL_ListarAuto";
-					
+			String sql= "call SPAL_ListarAutos()";
+
 			pst = con.prepareStatement(sql);
 				
 			rs = pst.executeQuery();
-					
-					
+
 			while(rs.next()){
-				
-				AutoDTO au = new AutoDTO();
-				
-				au.setCodigoAuto(rs.getString(1));
-				au.setModelooAuto(rs.getString(2));
-				au.setDescripcionAuto(rs.getString(3));
-				au.setAnoAuto(rs.getString(4));
-				au.setPesoAuto(rs.getString(5));
-				au.setPlacaAuto(rs.getString(6));
-				au.setColorAuto(rs.getString(7));
-				au.setPuertasAuto(rs.getInt(8));
-				au.setCilindradaAuto(rs.getString(9));
-				au.setPrecioAuto(rs.getDouble(10));
-				au.setEstadoAuto(rs.getBoolean(11));
-				au.setFotoAuto(rs.getString(12));
-
-				TipoAutoService tipoAutoService = new TipoAutoService();
-				TipoAutoDTO tipoAuto = tipoAutoService.ListadoTipoAutoxCodigo(rs.getString(13));
-				au.setTipoAuto(tipoAuto);
-
-				MarcaAutoService marcaAutoService = new MarcaAutoService();
-				MarcaAutoDTO marcaAuto = marcaAutoService.ListadoMarcaAutoxCodigo(rs.getString(14));
-				au.setMarcaAuto(marcaAuto);
-				
-				CarroceriaService carroceriaService = new CarroceriaService();
-				CarroceriaDTO carroceria = carroceriaService.ListadoCarroceriaxCodigo(rs.getString(15));
-				au.setCarroceria(carroceria);
-				
-				TipoTransmisionService tipoTransmisionService = new TipoTransmisionService();
-				TipoTransmisionDTO tipoTransmision = tipoTransmisionService.ListadoTipoTransmisionxCodigo(rs.getString(16));
-				au.setTipoTransmision(tipoTransmision);
-					
-				CombustibleService combustibleService = new CombustibleService();
-				CombustibleDTO combustible = combustibleService.ListadoCombustiblexCodigo(rs.getString(17));
-				au.setCombustible(combustible);
-
-				KilometrajeService kilometrajeService = new KilometrajeService();
-				KilometrajeDTO kilometraje = kilometrajeService.ListadoKilometrajexCodigo(rs.getString(18));
-				au.setKilometraje(kilometraje);
-				
-				lista.add(au);
+				lista.add(parsingToAutoDTO(rs));
 			}
 					
 		}catch(Exception e){
-					
 					System.out.println("ERROR EN LA SENTENCIA - LISTADO " + e.getMessage());		
 		}finally{
 			
@@ -125,47 +84,8 @@ public class MySQLAutoDAO implements AutoDAO {
 					
 					
 			while(rs.next()){
-				
-				AutoDTO au = new AutoDTO();
-				
-				au.setCodigoAuto(rs.getString(1));
-				au.setModelooAuto(rs.getString(2));
-				au.setDescripcionAuto(rs.getString(3));
-				au.setAnoAuto(rs.getString(4));
-				au.setPesoAuto(rs.getString(5));
-				au.setPlacaAuto(rs.getString(6));
-				au.setColorAuto(rs.getString(7));
-				au.setPuertasAuto(rs.getInt(8));
-				au.setCilindradaAuto(rs.getString(9));
-				au.setPrecioAuto(rs.getDouble(10));
-				au.setEstadoAuto(rs.getBoolean(11));
-				au.setFotoAuto(rs.getString(12));
-				
-				TipoAutoService tipoAutoService = new TipoAutoService();
-				TipoAutoDTO tipoAuto = tipoAutoService.ListadoTipoAutoxCodigo(rs.getString(13));
-				au.setTipoAuto(tipoAuto);
 
-				MarcaAutoService marcaAutoService = new MarcaAutoService();
-				MarcaAutoDTO marcaAuto = marcaAutoService.ListadoMarcaAutoxCodigo(rs.getString(14));
-				au.setMarcaAuto(marcaAuto);
-				
-				CarroceriaService carroceriaService = new CarroceriaService();
-				CarroceriaDTO carroceria = carroceriaService.ListadoCarroceriaxCodigo(rs.getString(15));
-				au.setCarroceria(carroceria);
-				
-				TipoTransmisionService tipoTransmisionService = new TipoTransmisionService();
-				TipoTransmisionDTO tipoTransmision = tipoTransmisionService.ListadoTipoTransmisionxCodigo(rs.getString(16));
-				au.setTipoTransmision(tipoTransmision);
-					
-				CombustibleService combustibleService = new CombustibleService();
-				CombustibleDTO combustible = combustibleService.ListadoCombustiblexCodigo(rs.getString(17));
-				au.setCombustible(combustible);
-
-				KilometrajeService kilometrajeService = new KilometrajeService();
-				KilometrajeDTO kilometraje = kilometrajeService.ListadoKilometrajexCodigo(rs.getString(18));
-				au.setKilometraje(kilometraje);
-				
-				auto = au;
+				auto = parsingToAutoDTO(rs);
 			}
 					
 		}catch(Exception e){
@@ -187,58 +107,35 @@ public class MySQLAutoDAO implements AutoDAO {
 	/*------------------------------------------------------------------*/
 	
 	public ArrayList<AutoDTO> ListadoAutoPorCodigoTipoAuto(String CodTipoAuto) {
-		
+
 		ArrayList<AutoDTO> lista = new ArrayList<AutoDTO>();
-		
+
 		ResultSet rs = null;
 		Connection con = null;
 		PreparedStatement pst = null;
-				
+
 		try{
-					
+
 			con = MySQLConexion.getConexion();
-					
-			String sql= "";
-					
+
+			String sql= "a";
+
 			pst = con.prepareStatement(sql);
-			
+
 			pst.setString(1, CodTipoAuto);
-				
+
 			rs = pst.executeQuery();
-					
-					
+
+
 			while(rs.next()){
-				
-				AutoDTO au = new AutoDTO();
-				
-				au.setCodigoAuto(rs.getString(1));
-				au.setModelooAuto(rs.getString(2));
-				au.setDescripcionAuto(rs.getString(3));
-				au.setAnoAuto(rs.getString(4));
-				au.setPesoAuto(rs.getString(5));
-				au.setPlacaAuto(rs.getString(6));
-				au.setColorAuto(rs.getString(7));
-				au.setPuertasAuto(rs.getInt(8));
-				au.setCilindradaAuto(rs.getString(9));
-				au.setPrecioAuto(rs.getDouble(10));
-				au.setEstadoAuto(rs.getBoolean(11));
-				au.setFotoAuto(rs.getString(12));
-				
-				au.setCodigoTipoAuto(rs.getString(13));
-				au.setCodigoMarcaAuto(rs.getString(14));
-				au.setCodigoCarroceria(rs.getString(15));
-				au.setCodigoTipoTransmision(rs.getString(16));
-				au.setCodigoCombustible(rs.getString(17));
-				au.setCodigoKilometraje(rs.getString(18));
-				
-				lista.add(au);
+				lista.add(parsingToAutoDTO(rs));
 			}
-					
+
 		}catch(Exception e){
-					
-					System.out.println("ERROR EN LA SENTENCIA - LISTADO " + e.getMessage());		
+
+					System.out.println("ERROR EN LA SENTENCIA - LISTADO " + e.getMessage());
 		}finally{
-			
+
 			try{
 				con.close();
 				pst.close();
@@ -248,65 +145,42 @@ public class MySQLAutoDAO implements AutoDAO {
 		}
 
 		return lista;
-		
+
 	}
 
 	/* ------------------------------------------------------------------ */
 
 	@Override
 	public ArrayList<AutoDTO> ListadoAutoPorCodigoMarcaAuto(String CodMarcaAuto) {
-		
+
 		ArrayList<AutoDTO> lista = new ArrayList<AutoDTO>();
-		
+
 		ResultSet rs = null;
 		Connection con = null;
 		PreparedStatement pst = null;
-				
+
 		try{
-					
+
 			con = MySQLConexion.getConexion();
-					
-			String sql= "";
-					
+
+			String sql= "b";
+
 			pst = con.prepareStatement(sql);
-			
+
 			pst.setString(1, CodMarcaAuto);
-				
+
 			rs = pst.executeQuery();
-					
-					
+
+
 			while(rs.next()){
-				
-				AutoDTO au = new AutoDTO();
-				
-				au.setCodigoAuto(rs.getString(1));
-				au.setModelooAuto(rs.getString(2));
-				au.setDescripcionAuto(rs.getString(3));
-				au.setAnoAuto(rs.getString(4));
-				au.setPesoAuto(rs.getString(5));
-				au.setPlacaAuto(rs.getString(6));
-				au.setColorAuto(rs.getString(7));
-				au.setPuertasAuto(rs.getInt(8));
-				au.setCilindradaAuto(rs.getString(9));
-				au.setPrecioAuto(rs.getDouble(10));
-				au.setEstadoAuto(rs.getBoolean(11));
-				au.setFotoAuto(rs.getString(12));
-				
-				au.setCodigoTipoAuto(rs.getString(13));
-				au.setCodigoMarcaAuto(rs.getString(14));
-				au.setCodigoCarroceria(rs.getString(15));
-				au.setCodigoTipoTransmision(rs.getString(16));
-				au.setCodigoCombustible(rs.getString(17));
-				au.setCodigoKilometraje(rs.getString(18));
-				
-				lista.add(au);
+				lista.add(parsingToAutoDTO(rs));
 			}
-					
+
 		}catch(Exception e){
-					
-					System.out.println("ERROR EN LA SENTENCIA - LISTADO " + e.getMessage());		
+
+					System.out.println("ERROR EN LA SENTENCIA - LISTADO " + e.getMessage());
 		}finally{
-			
+
 			try{
 				con.close();
 				pst.close();
@@ -316,67 +190,44 @@ public class MySQLAutoDAO implements AutoDAO {
 		}
 
 		return lista;
-		
-		
-		
+
+
+
 	}
 	/*------------------------------------------------------------------*/
 	
 
 	@Override
 	public ArrayList<AutoDTO> ListadoAutoPorCodigoCarroceria(String CodCarroceria) {
-		
+
 		ArrayList<AutoDTO> lista = new ArrayList<AutoDTO>();
-		
+
 		ResultSet rs = null;
 		Connection con = null;
 		PreparedStatement pst = null;
-				
+
 		try{
-					
+
 			con = MySQLConexion.getConexion();
-					
-			String sql= "";
-					
+
+			String sql= "c";
+
 			pst = con.prepareStatement(sql);
-			
+
 			pst.setString(1, CodCarroceria);
-				
+
 			rs = pst.executeQuery();
-					
-					
+
+
 			while(rs.next()){
-				
-				AutoDTO au = new AutoDTO();
-				
-				au.setCodigoAuto(rs.getString(1));
-				au.setModelooAuto(rs.getString(2));
-				au.setDescripcionAuto(rs.getString(3));
-				au.setAnoAuto(rs.getString(4));
-				au.setPesoAuto(rs.getString(5));
-				au.setPlacaAuto(rs.getString(6));
-				au.setColorAuto(rs.getString(7));
-				au.setPuertasAuto(rs.getInt(8));
-				au.setCilindradaAuto(rs.getString(9));
-				au.setPrecioAuto(rs.getDouble(10));
-				au.setEstadoAuto(rs.getBoolean(11));
-				au.setFotoAuto(rs.getString(12));
-				
-				au.setCodigoTipoAuto(rs.getString(13));
-				au.setCodigoMarcaAuto(rs.getString(14));
-				au.setCodigoCarroceria(rs.getString(15));
-				au.setCodigoTipoTransmision(rs.getString(16));
-				au.setCodigoCombustible(rs.getString(17));
-				au.setCodigoKilometraje(rs.getString(18));
-				
-				lista.add(au);
+				lista.add(parsingToAutoDTO(rs));
 			}
-					
+
 		}catch(Exception e){
-					
-					System.out.println("ERROR EN LA SENTENCIA - LISTADO " + e.getMessage());		
+
+					System.out.println("ERROR EN LA SENTENCIA - LISTADO " + e.getMessage());
 		}finally{
-			
+
 			try{
 				con.close();
 				pst.close();
@@ -386,65 +237,42 @@ public class MySQLAutoDAO implements AutoDAO {
 		}
 
 		return lista;
-		
+
 	}
 	/*------------------------------------------------------------------*/
 	
 
 	@Override
 	public ArrayList<AutoDTO> ListadoAutoPorCodigoTipoTransmision(String CodTipoTransmision) {
-		
+
 		ArrayList<AutoDTO> lista = new ArrayList<AutoDTO>();
-		
+
 		ResultSet rs = null;
 		Connection con = null;
 		PreparedStatement pst = null;
-				
+
 		try{
-					
+
 			con = MySQLConexion.getConexion();
-					
-			String sql= "";
-					
+
+			String sql= "d";
+
 			pst = con.prepareStatement(sql);
-			
+
 			pst.setString(1, CodTipoTransmision);
-				
+
 			rs = pst.executeQuery();
-					
-					
+
+
 			while(rs.next()){
-				
-				AutoDTO au = new AutoDTO();
-				
-				au.setCodigoAuto(rs.getString(1));
-				au.setModelooAuto(rs.getString(2));
-				au.setDescripcionAuto(rs.getString(3));
-				au.setAnoAuto(rs.getString(4));
-				au.setPesoAuto(rs.getString(5));
-				au.setPlacaAuto(rs.getString(6));
-				au.setColorAuto(rs.getString(7));
-				au.setPuertasAuto(rs.getInt(8));
-				au.setCilindradaAuto(rs.getString(9));
-				au.setPrecioAuto(rs.getDouble(10));
-				au.setEstadoAuto(rs.getBoolean(11));
-				au.setFotoAuto(rs.getString(12));
-				
-				au.setCodigoTipoAuto(rs.getString(13));
-				au.setCodigoMarcaAuto(rs.getString(14));
-				au.setCodigoCarroceria(rs.getString(15));
-				au.setCodigoTipoTransmision(rs.getString(16));
-				au.setCodigoCombustible(rs.getString(17));
-				au.setCodigoKilometraje(rs.getString(18));
-				
-				lista.add(au);
+				lista.add(parsingToAutoDTO(rs));
 			}
-					
+
 		}catch(Exception e){
-					
-					System.out.println("ERROR EN LA SENTENCIA - LISTADO " + e.getMessage());		
+
+					System.out.println("ERROR EN LA SENTENCIA - LISTADO " + e.getMessage());
 		}finally{
-			
+
 			try{
 				con.close();
 				pst.close();
@@ -460,58 +288,35 @@ public class MySQLAutoDAO implements AutoDAO {
 
 	@Override
 	public ArrayList<AutoDTO> ListadoAutoPorCodigoCombustible(String CodCombustible) {
-		
+
 		ArrayList<AutoDTO> lista = new ArrayList<AutoDTO>();
-		
+
 		ResultSet rs = null;
 		Connection con = null;
 		PreparedStatement pst = null;
-				
+
 		try{
-					
+
 			con = MySQLConexion.getConexion();
-					
-			String sql= "";
-					
+
+			String sql= "e";
+
 			pst = con.prepareStatement(sql);
-			
+
 			pst.setString(1, CodCombustible);
-				
+
 			rs = pst.executeQuery();
-					
-					
+
+
 			while(rs.next()){
-				
-				AutoDTO au = new AutoDTO();
-				
-				au.setCodigoAuto(rs.getString(1));
-				au.setModelooAuto(rs.getString(2));
-				au.setDescripcionAuto(rs.getString(3));
-				au.setAnoAuto(rs.getString(4));
-				au.setPesoAuto(rs.getString(5));
-				au.setPlacaAuto(rs.getString(6));
-				au.setColorAuto(rs.getString(7));
-				au.setPuertasAuto(rs.getInt(8));
-				au.setCilindradaAuto(rs.getString(9));
-				au.setPrecioAuto(rs.getDouble(10));
-				au.setEstadoAuto(rs.getBoolean(11));
-				au.setFotoAuto(rs.getString(12));
-				
-				au.setCodigoTipoAuto(rs.getString(13));
-				au.setCodigoMarcaAuto(rs.getString(14));
-				au.setCodigoCarroceria(rs.getString(15));
-				au.setCodigoTipoTransmision(rs.getString(16));
-				au.setCodigoCombustible(rs.getString(17));
-				au.setCodigoKilometraje(rs.getString(18));
-				
-				lista.add(au);
+				lista.add(parsingToAutoDTO(rs));
 			}
-					
+
 		}catch(Exception e){
-					
-					System.out.println("ERROR EN LA SENTENCIA - LISTADO " + e.getMessage());		
+
+					System.out.println("ERROR EN LA SENTENCIA - LISTADO " + e.getMessage());
 		}finally{
-			
+
 			try{
 				con.close();
 				pst.close();
@@ -527,58 +332,36 @@ public class MySQLAutoDAO implements AutoDAO {
 
 	@Override
 	public ArrayList<AutoDTO> ListadoAutoPorCodigoKilometraje(String CodKilometraje) {
-		
+
 		ArrayList<AutoDTO> lista = new ArrayList<AutoDTO>();
-		
+
 		ResultSet rs = null;
 		Connection con = null;
 		PreparedStatement pst = null;
-				
+
 		try{
-					
+
 			con = MySQLConexion.getConexion();
-					
-			String sql= "";
-					
+
+			String sql= "f";
+
 			pst = con.prepareStatement(sql);
-			
+
 			pst.setString(1, CodKilometraje);
-				
+
 			rs = pst.executeQuery();
-					
-					
+
+
 			while(rs.next()){
-				
-				AutoDTO au = new AutoDTO();
-				
-				au.setCodigoAuto(rs.getString(1));
-				au.setModelooAuto(rs.getString(2));
-				au.setDescripcionAuto(rs.getString(3));
-				au.setAnoAuto(rs.getString(4));
-				au.setPesoAuto(rs.getString(5));
-				au.setPlacaAuto(rs.getString(6));
-				au.setColorAuto(rs.getString(7));
-				au.setPuertasAuto(rs.getInt(8));
-				au.setCilindradaAuto(rs.getString(9));
-				au.setPrecioAuto(rs.getDouble(10));
-				au.setEstadoAuto(rs.getBoolean(11));
-				au.setFotoAuto(rs.getString(12));
-				
-				au.setCodigoTipoAuto(rs.getString(13));
-				au.setCodigoMarcaAuto(rs.getString(14));
-				au.setCodigoCarroceria(rs.getString(15));
-				au.setCodigoTipoTransmision(rs.getString(16));
-				au.setCodigoCombustible(rs.getString(17));
-				au.setCodigoKilometraje(rs.getString(18));
-				
-				lista.add(au);
+
+				lista.add(parsingToAutoDTO(rs));
 			}
-					
+
 		}catch(Exception e){
-					
-					System.out.println("ERROR EN LA SENTENCIA - LISTADO " + e.getMessage());		
+
+					System.out.println("ERROR EN LA SENTENCIA - LISTADO " + e.getMessage());
 		}finally{
-			
+
 			try{
 				con.close();
 				pst.close();
@@ -588,6 +371,56 @@ public class MySQLAutoDAO implements AutoDAO {
 		}
 
 		return lista;
+	}
+
+	private AutoDTO parsingToAutoDTO(ResultSet rs) throws SQLException {
+
+		AutoDTO au = new AutoDTO();
+
+		au.setCodigoAuto(rs.getString(1));
+		au.setModelooAuto(rs.getString(2));
+		au.setDescripcionAuto(rs.getString(3));
+		au.setAnoAuto(rs.getString(4));
+		au.setPesoAuto(rs.getString(5));
+		au.setPlacaAuto(rs.getString(6));
+		au.setColorAuto(rs.getString(7));
+		au.setPuertasAuto(rs.getInt(8));
+		au.setCilindradaAuto(rs.getString(9));
+		au.setPrecioAuto(rs.getDouble(10));
+		au.setEstadoAuto(rs.getBoolean(11));
+		au.setFotoAuto(rs.getString(12));
+
+		TipoAutoDTO tipoAuto = new TipoAutoDTO();
+		tipoAuto.setCodigoTipoAuto(rs.getString(13));
+		tipoAuto.setNombreTipoAuto(rs.getString(14));
+		au.setTipoAuto(tipoAuto);
+
+		MarcaAutoDTO marcaAuto = new MarcaAutoDTO();
+		marcaAuto.setCodigoMarcaAuto(rs.getString(15));
+		marcaAuto.setNombreMarcaAuto(rs.getString(16));
+		au.setMarcaAuto(marcaAuto);
+
+		CarroceriaDTO carroceria = new CarroceriaDTO();
+		carroceria.setCodigoCarroceria(rs.getString(17));
+		carroceria.setNombreCarroceria(rs.getString(18));
+		au.setCarroceria(carroceria);
+
+		TipoTransmisionDTO tipoTransmision = new TipoTransmisionDTO();
+		tipoTransmision.setCodigoTipoTransmision(rs.getString(19));
+		tipoTransmision.setNombreTipoTransmision(rs.getString(20));
+		au.setTipoTransmision(tipoTransmision);
+
+		CombustibleDTO combustible = new CombustibleDTO();
+		combustible.setCodigoCombustible(rs.getString(21));
+		combustible.setNombreCombustible(rs.getString(22));
+		au.setCombustible(combustible);
+
+		KilometrajeDTO kilometraje = new KilometrajeDTO();
+		kilometraje.setCodigoKilometraje(rs.getString(23));
+		kilometraje.setNombreKilometraje(rs.getString(24));
+		au.setKilometraje(kilometraje);
+
+		return au;
 	}
 
 }

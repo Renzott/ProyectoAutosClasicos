@@ -12,16 +12,12 @@ import edu.cibertec.beans.EventosDTO;
 import edu.cibertec.beans.RespuestaListadoDTO;
 import edu.cibertec.service.EventosService;
 
-@Path("/tipoget")
-public class ServiciosEventosGet {
-	/*
-	 - Defino mi endPoint:
-	 
-	 http://localhost:8080/ProyectoAutosClasicos/tipoget/listEventos
-	*/
+@Path("/api")
+public class EventoController {
+
 	
 	@GET
-	@Path("/listEventos")
+	@Path("/eventos")
 	@Produces(MediaType.APPLICATION_JSON)
 	public RespuestaListadoDTO ListarEventosX() {
 		System.out.println("ini: ListarEventosX()");
@@ -36,20 +32,15 @@ public class ServiciosEventosGet {
 		 }else {
 			 
 			 System.out.println("Te envio todo el listado de Eventos!");
-			 respuesta = new RespuestaListadoDTO(lista); //EventosDTO(lista);
+			 respuesta = new RespuestaListadoDTO(lista);
 		 }
 			System.out.println("fin: ListarEventosX()");
 		
 		return respuesta;
 	}
-	
-	/*
-	 - Defino mi endPoint:
-	 
-	 http://localhost:8080/ProyectoAutosClasicos/tipoget/ListarEventosXCodigoAuto/EV01
-	*/
+
 	@GET
-	@Path("/listEventosXCodigoAuto/{codAutox}")
+	@Path("/eventos/auto/{codAutox}")
 	@Produces(MediaType.APPLICATION_JSON)
 	public RespuestaListadoDTO ListarEventosXCodigoAuto(@PathParam("codAutox") String CodAuto) {
 		

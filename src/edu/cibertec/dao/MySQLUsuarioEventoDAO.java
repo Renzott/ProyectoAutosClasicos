@@ -24,7 +24,7 @@ public class MySQLUsuarioEventoDAO implements UsuarioEventoDAO {
 			
 			con = MySQLConexion.getConexion();
 			
-			String sql = "Call {SPAL_RegistrarUsuarioEvento (?,?,?,?,?,?)}";
+			String sql = "Call SPAL_RegistrarUsuarioEvento(null,?,?,?,?,?,?)";
 			
 			pst = con.prepareStatement(sql);
 			
@@ -66,7 +66,7 @@ public class MySQLUsuarioEventoDAO implements UsuarioEventoDAO {
 			
 			con = MySQLConexion.getConexion();
 			
-			String sql = "Call {SPAL_ActualizarUsuarioEvento (?,?,?,?,?,?,?)}";
+			String sql = "Call SPAL_ActualizarUsuarioEvento (?,?,?,?,?,?,?)";
 			
 			pst = con.prepareStatement(sql);
 			

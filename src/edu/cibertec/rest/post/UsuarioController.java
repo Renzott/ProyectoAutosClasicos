@@ -9,31 +9,26 @@ import javax.ws.rs.core.MediaType;
 import edu.cibertec.beans.ClienteDTO;
 import edu.cibertec.service.ClienteService;
 
-@Path("/tipopost")
-public class ServiciosPost {
-
-	//http://localhost:8080/ProyectoAutosClasicos/tipopost/registrocliente
+@Path("/api")
+public class UsuarioController {
 		
 	@POST
-	@Path("/registrocliente")
+	@Path("/usuario")
 	@Consumes(MediaType.APPLICATION_JSON)
 	@Produces(MediaType.APPLICATION_JSON)
 	public String registrarCliente(ClienteDTO datos){
-		System.out.println("ini: registrarCliente()");
+
 		String respuesta;
 		
 		ClienteService clienteService = new ClienteService();
 		int registro = clienteService.RegistrarCliente(datos);
 		
 		if (registro == 1) {
-			System.out.println("Registro de Cliente Exitoso");
 			respuesta = "Registro de Cliente Exitoso";
 		} else {
-			System.out.println("Registro de Cliente Fallido");
 			respuesta = "Registro de Cliente Fallido";
 		}
-		
-		System.out.println("fin: registrarCliente()");		
+
 		return respuesta;
 	}
 }

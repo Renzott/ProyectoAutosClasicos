@@ -10,11 +10,11 @@ import edu.cibertec.beans.EventosDTO;
 import edu.cibertec.beans.ResultadoDTO;
 import edu.cibertec.service.EventosService;
 
-@Path("/tipopost")
-public class ServiciosEventosPost {
+@Path("/api")
+public class EventoController {
 
 	@POST
-	@Path("/regEvent")
+	@Path("/evento")
 	@Consumes(MediaType.APPLICATION_JSON)
 	@Produces(MediaType.APPLICATION_JSON)
 	public ResultadoDTO RegistrarEventos(EventosDTO eve) {
@@ -49,7 +49,7 @@ public class ServiciosEventosPost {
 	}
 	
 	@POST
-	@Path("/actEvent")
+	@Path("/evento/actualizar")
 	@Consumes(MediaType.APPLICATION_JSON)
 	@Produces(MediaType.APPLICATION_JSON)
 	public ResultadoDTO ActualizaEventos(EventosDTO eve) {
@@ -81,7 +81,7 @@ public class ServiciosEventosPost {
 	}
 	
 	@POST
-	@Path("/elimEvent")
+	@Path("/evento/eliminar")
 	@Consumes(MediaType.APPLICATION_JSON)
 	@Produces(MediaType.APPLICATION_JSON)
 	public ResultadoDTO EliminarEventos(EventosDTO eve) {

@@ -10,28 +10,16 @@ import edu.cibertec.beans.ResultadoDTO;
 import edu.cibertec.beans.UsuarioEventoDTO;
 import edu.cibertec.service.UsuarioEventoService;
 
-@Path("/tipopost")
-public class ServiciosUsuarioEventosPost {
+@Path("/api")
+public class UsuarioEventoController {
 
 	@POST
-	@Path("/regUsuEvent")
+	@Path("/usuarioeventos")
 	@Consumes(MediaType.APPLICATION_JSON)
 	@Produces(MediaType.APPLICATION_JSON)
 	public ResultadoDTO RegistrarUsuarioEvento(UsuarioEventoDTO datos) {
-		
-		System.out.println("Inic: RegistrarUsuarioEvento()");
-		System.out.println("Codigo Usuario Evento: " + datos.getCodigoUsuarioEvento());
-		System.out.println("NroDocumentoUsuarioEvento: " + datos.getNroDocumentoUsuarioEvento());
-		System.out.println("NombresUsuarioEvento: " + datos.getNombresUsuarioEvento());
-		System.out.println("ApellidosUsuarioEvento: " + datos.getApellidosUsuarioEvento());
-		System.out.println("FechaNacimientoUsuarioEvento: " + datos.getFechaNacimientoUsuarioEvento());
-		System.out.println("CorreoUsuarioEvento: " + datos.getCorreoUsuarioEvento());
-		System.out.println("CodigoEventos: " + datos.getCodigoEventos());
-		
-		
+
 		ResultadoDTO resultado = null;
-		
-		
 		UsuarioEventoService js = new UsuarioEventoService();
 		
 		int ok = js.RegistrarUsuarioEvento(datos);
@@ -55,47 +43,17 @@ public class ServiciosUsuarioEventosPost {
 		
 		return resultado;
 	}
-	/*-----------------------------------------------------------*/
-	
-	
-	
-	//2. Servicio de Actualizar!
-	
-	/*Defino el ENDPOINT del segundo Servicio:
 
-	http://localhost:8080//tipopost/
-	*/
-	
-	
-	/* BODY
-	  
-	  {
-            
-        }
-	*/
 	
 	@POST
-	@Path("/actUsuEvent")
+	@Path("/usuarioeventos/actualizar")
 	@Consumes(MediaType.APPLICATION_JSON)
 	@Produces(MediaType.APPLICATION_JSON)
 	public ResultadoDTO ActualizarUsuarioEvento(UsuarioEventoDTO datos) {
-		System.out.println("Inic: ActualizarUsuarioEvento()");
-		System.out.println("Codigo Usuario Evento: " + datos.getCodigoUsuarioEvento());
-		System.out.println("NroDocumentoUsuarioEvento: " + datos.getNroDocumentoUsuarioEvento());
-		System.out.println("NombresUsuarioEvento: " + datos.getNombresUsuarioEvento());
-		System.out.println("ApellidosUsuarioEvento: " + datos.getApellidosUsuarioEvento());
-		System.out.println("FechaNacimientoUsuarioEvento: " + datos.getFechaNacimientoUsuarioEvento());
-		System.out.println("CorreoUsuarioEvento: " + datos.getCorreoUsuarioEvento());
-		System.out.println("CodigoEventos: " + datos.getCodigoEventos());
-		
-		
+
 		ResultadoDTO resultado = null;
-		
-		
 		UsuarioEventoService js = new UsuarioEventoService();
-		
 		int ok = js.ActualizarUsuarioEvento(datos);
-		
 		
 		if(ok == 0) {
 			
@@ -115,42 +73,16 @@ public class ServiciosUsuarioEventosPost {
 		
 		return resultado;
 	}
-	/*-----------------------------------------------------------*/
-	
-	
-	//3. Servicio de Eliminar!
-	
-		/*Defino el ENDPOINT del tercer Servicio:
-
-		http://localhost:8080/JugadorDAO/tipopost/elim
-		*/
-		
-		
-		/* BODY
-		  
-		  {
-	        "codigo": 11
-	      }
-		*/
-	
 	
 	@POST
-	@Path("/elim")
+	@Path("/usuarioeventos/eliminar")
 	@Consumes(MediaType.APPLICATION_JSON)
 	@Produces(MediaType.APPLICATION_JSON)
 	public ResultadoDTO EliminarUsuarioEvento(UsuarioEventoDTO datos) {
-		
-		System.out.println("Inic: EliminarUsuarioEvento()");
-		System.out.println("Codigo Usuario Evento: " + datos.getCodigoUsuarioEvento());
 
-		
 		ResultadoDTO resultado = null;
-		
-		
 		UsuarioEventoService js = new UsuarioEventoService();
-		
 		int ok = js.EliminarUsuarioEvento(datos);
-		
 		
 		if(ok == 0) {
 			

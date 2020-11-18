@@ -12,10 +12,12 @@ import edu.cibertec.beans.AutoDTO;
 import edu.cibertec.beans.RespuestaDTO;
 import edu.cibertec.service.AutoService;
 
-@Path("/tipoget")
-public class ServiciosGet {
-	
-	//http://localhost:8080/ProyectoAutosClasicos/tipoget/autos
+@Path("/api")
+public class AutoController {
+
+	/*
+	* Endpoint : api/autos
+	* */
 	@GET
 	@Path("/autos")
 	@Produces(MediaType.APPLICATION_JSON)
@@ -36,12 +38,13 @@ public class ServiciosGet {
 		System.out.println("fin: listarAutos()");
 		
 		return respuesta;
-	}	
-	
-	//http://localhost:8080/ProyectoAutosClasicos/tipoget/autoxcodigo/A001
-	
+	}
+
+	/*
+	 * Endpoint : api/auto/{codigo}
+	 * */
 	@GET
-	@Path("/autoxcodigo/{codigo}")
+	@Path("/auto/{codigo}")
 	@Produces(MediaType.APPLICATION_JSON)
 	public RespuestaDTO listarAutoxCodigo(@PathParam("codigo") String codigo){
 		System.out.println("ini: listarAutoxCodigo()");

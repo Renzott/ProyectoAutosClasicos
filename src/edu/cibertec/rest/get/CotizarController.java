@@ -12,17 +12,11 @@ import edu.cibertec.beans.CotizarAutoDTO;
 import edu.cibertec.beans.RespuestaListadoDTO;
 import edu.cibertec.service.CotizarAutoService;
 
-@Path("/tipoget")
-public class ServiciosCotizarGet {
-	//Primer Servicio -> "ListarCotizarAutos"
-	
-		/*
-		 - Defino mi endPoint:
-		 
-		 http://localhost:8080/ProyectoAutosClasicos/tipoget/ListadoCotizarAutos
-		*/
+@Path("/api")
+public class CotizarController {
+
 	@GET
-	@Path("/ListadoCotizarAutos")
+	@Path("/cotizaciones")
 	@Produces(MediaType.APPLICATION_JSON)
 	public RespuestaListadoDTO ListarCotizarAutos() {
 		
@@ -44,16 +38,9 @@ public class ServiciosCotizarGet {
 		
 		return respuesta;
 	}
-	/*--------------------------------------------------------------*/
-	//Segundo Servicio -> "ListarCotizarAutosPorCodigoMarcaAuto()"
-	
-		/*
-		 - Defino mi endPoint:
-		 
-		 http://localhost:8080/ProyectoAutosClasicos/tipoget/ListadoCotizarAutosPorCodigoMarcaAuto/1
-		*/
+
 	@GET
-	@Path("/ListadoCotizarAutosxCodigoMarcaAuto/{CodigoxMarcaAuto}")
+	@Path("/cotazaciones/marcaauto/{CodigoxMarcaAuto}")
 	@Produces(MediaType.APPLICATION_JSON)
 	public RespuestaListadoDTO ListarCotizarAutosPorCodigoMarcaAuto(@PathParam("CodigoxMarcaAuto") String CodMarcaAuto) {
 		
@@ -77,16 +64,10 @@ public class ServiciosCotizarGet {
 		
 		return respuesta;
 	}
-	/*--------------------------------------------------------------*/
-	//Tercer Servicio -> "ListadoCotizarAutosPorCodigoAuto()"
-	
-		/*
-		 - Defino mi endPoint:
-		 
-		 http://localhost:8080/ProyectoAutosClasicos/tipoget/ListadoCotizarAutosPorCodigoAuto/1
-		*/
+
+
 	@GET
-	@Path("/ListadoCotizarAutosPorCodigoAuto/{CodigoxAuto}")
+	@Path("/cotazaciones/auto/{CodigoxAuto}")
 	@Produces(MediaType.APPLICATION_JSON)
 	public RespuestaListadoDTO ListadoCotizarAutosPorCodigoAuto(@PathParam("CodigoxAuto") String CodAuto) {
 		

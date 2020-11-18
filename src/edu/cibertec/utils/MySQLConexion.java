@@ -14,7 +14,7 @@ public class MySQLConexion {
 		
 		try {
 			Class.forName("com.mysql.jdbc.Driver");
-			String url = "jdbc:mysql://den1.mysql1.gear.host/autosbd?characterEncoding=latin1&useConfigs=maxPerformance";
+			String url = "jdbc:mysql://den1.mysql1.gear.host/autosbd?useSSL=false";
 			String usr = "autosbd";
 			String psw = "Pe8t-i1d-346";
 			
